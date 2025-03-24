@@ -1,0 +1,34 @@
+<!-- This page is meant to show the user that they have got their booking stored and ready to go. -->
+<!-- The code below alters the way the site looks so when the user goes onto the site it will look nicer for the user. -->
+<!-- The style code within this website was done by Eduards Purgalis. -->
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>HBC Media Equipment booking system: Conformation</title>
+    </head>
+    </body>
+    <body>
+    <div>
+        <h1 style="background-color:#333c54; color:rgb(255, 255, 255);">
+            Your requisition has been made.
+        </h1>
+    </div>
+    <form>
+        <body>
+            <p style="color:rgb(0, 0, 0);">
+            Your requisition has been made so on the day you have booked, you can get your equipment.
+            You can go back to the homepage now.</p>
+        </body>
+            <p>
+                <a href="/Homepage">Homepage</a>
+            </p>
+        <body>
+            <span: style="display: inline; background-color:#c41919; font-size:12px; line-height: 0.95;">
+                <p: style="color:rgb(255, 255, 255);">⚠️ Please understand that borrowed equipment is to be returned on time,
+                alongside in the condition it was prior to borrowing. ⚠️
+                ⚠️ If conditions are not met action may be taken against you if you are to use our booking service. ⚠️</p></span>
+        </body>
+    </form>
+    </body>
+</html>
