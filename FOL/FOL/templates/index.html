@@ -1,0 +1,30 @@
+<!-- Now this is first page which will sign the user in, if they have entered details which are accepted by the code.  -->
+<!-- The style code within this website was done by Eduards Purgalis. -->
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>HBC Media Equipment booking system: Sign in</title>
+    </head>
+    <body>
+    <div>
+        <h1 style="background-color:#333c54; color:rgb(255, 255, 255);">
+            HBC Media Equipment booking system: Log / Sign In</h1>
+    </div>
+        <body>
+            <h2>Enter your account name and password to login.</h2>
+            <!-- The action code is to trigger the code in the app.py file so the user can actually affect the code and files. -->
+            <form method = "post" action = "{{ url_for('sign_in') }}">
+                <input type = "number" name = "student_number" placeholder = "Student number:" minlength="8" maxlength="8" required>
+                <input type = "password" name = "password" placeholder = "Password:" required>
+                <button type = "submit">Submit</button>
+            </form>
+            <p style="color:rgb(0, 0, 0);">
+                To sign up with your college account, press the link below.<br>
+                <a href="/Register">Register here</a></p>
+            <p style="color:rgb(0, 0, 0);">
+                If you are staff, login with this link below.<br>
+                <a href="/Staff_sign_in">Staff sign in</a></p>
+        </body>
+    </body>
+</html>

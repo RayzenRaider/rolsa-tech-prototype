@@ -1,0 +1,32 @@
+<!-- Now this is the which will sign the user in, if they have entered details which are accepted by the code.  -->
+<!-- The style code within this website was done by Eduards Purgalis. -->
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>HBC Media Equipment booking system: Staff sign in</title>
+    </head>
+    <body>
+        <div>
+            <h1 style="background-color:#333c54; color:rgb(255, 255, 255);">
+                HBC Media Equipment booking system: Staff Sign In</h1>
+        </div>
+        <body>
+            <h2>Below are the relevent (and required) details we need for your staff account creation.</h2>
+            <!-- The action code is to trigger the code in the app.py file so the user can actually affect the code and files. -->
+            <form method = "post" action = "{{ url_for('Staff_sign_in') }}">
+                <p style="color:rgb(0, 0, 0);">
+                Account Name | Account password</p>
+                    <input type = "text" name = "name" placeholder = "Enter name" required>
+                    <input type = "password" name = "password" placeholder = "Enter password" required>
+                <button type = "submit">Submit</button>
+            </form>
+            <div>
+                <span: style="display: inline; background-color:#333c54;">
+                    <h2: style="color:rgb(255, 255, 255);">
+                        If you're a student, please use the other option as this won't work with your details.</h2></span:><br>
+                    <a href="/">Student sign in</a>
+            </div>
+        </body>
+    </body>
+</html>
