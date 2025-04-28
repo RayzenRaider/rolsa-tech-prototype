@@ -1,0 +1,29 @@
+This task is to be completed under supervised conditions during a window of two weeks.
+During this task your provider will schedule 15 supervised hours during the supervised assessment period so you have sufficient access to others who can provide feedback to you on your solution
+
+In addition to the supervised time, you are permitted to produce evidence for this task during unsupervised time. You should use this time to gather feedback from sources outside those in your class or outside your centre
+
+You are allowed access to the internet during both the supervised and unsupervised elements of this task.
+You are allowed access to copies of:
+- your design
+- the prototype digital solution you have produced
+You are not allowed to make changes to the evidence produced in previous tasks
+Your tutor is not permitted to provide guidance or feedback during this task
+
+Set Task Brief
+Your manager has asked you to gather feedback on your prototype. You will use this feedback to evaluate the effectiveness of the prototype so you can identify and plan the next steps for future iterations.
+
+Activities
+Produce materials to support the gathering of feedback and use them to gain feedback from technical and non-technical audiences.
+
+You need to:
+- use appropriate tools, methods and techniques to prepare demonstrations of the prototype's functionality, suitable for:
+  - a technical audience (e.g. programming professionals)
+  - a non-technical audience (e.g. the client, users)
+- produce a plan for how you intend to gather feedback
+- use the materials you produce to gather feedback
+- record the feedback received in a format(s) suitable for analysis
+
+Outcomes for submission
+Save the materials you have created, and the dieback received, using any suitable file type in your folder for submission using this naming convention:
+- Task3_PartA_[Document name]_[Registration number]_[Surname]_[First letter of first name]+
