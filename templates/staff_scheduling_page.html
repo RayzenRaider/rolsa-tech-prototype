@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rolsa Technologies:Schedule Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rolsa Technologies:Schedule Management</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+
+                <div class="flash-messages">
+                    {{ messages[0] }}
+                </div>
+
+            {% endif %}
+        {% endwith %}
+
+        <div class="stats-container">
+
+            <div class="stat-box">
+                <div class="stat-number">{{ stats.total_consultations }}</div>
+                <div class="stat-label">Total Consultations</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">{{ stats.total_installations }}</div>
+                <div class="stat-label">Total Installations</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">{{ stats.pending_consultations }}</div>
+                <div class="stat-label">Pending Consultations</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">{{ stats.pending_installations }}</div>
+                <div class="stat-label">Pending Installations</div>
+            </div>
+
+        </div>
+
+        <div class="schedule-buttons">
+
+            <a href="{{ url_for('consultations_log') }}" class="schedule-button">
+                View Consultation Schedules
+            </a>
+
+            <a href="{{ url_for('installations_log') }}" class="schedule-button">
+                View Installation Schedules
+            </a>
+
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('staff_home_page') }}">Back to Homepage</a>
+        </div>
+
+    </div>
+</body>
+</html>

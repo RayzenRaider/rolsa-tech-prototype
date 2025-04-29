@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rolsa Technologies:Schedule Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1>Schedule a Service</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+
+                <div class="flash-messages">
+                    {{ messages[0] }}
+                </div>
+
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="schedule_type">Service Type</label>
+
+                <select id="schedule_type" name="schedule_type" required onchange="updateSubTypes()">
+                    <option value="">Select type...</option>
+                    {% for type in schedule_types %}
+                    <option value="{{ type }}">{{ type }}</option>
+                    {% endfor %}
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="sub_type">Service Details</label>
+
+                <select id="sub_type" name="sub_type" required>
+                    <option value="">Select service details...</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="scheduled_date">Preferred Date</label>
+                <input type="date" id="scheduled_date" name="scheduled_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline_date">Deadline Date</label>
+                <input type="date" id="deadline_date" name="deadline_date" required>
+            </div>
+
+            <button type="submit">Schedule Service</button>
+        </form>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home_page') }}">Back to Homepage</a>
+        </div>
+
+    </div>
+
+    <script>
+        const subTypesByMain = {{ sub_types_by_main | tojson }};
+        
+        function updateSubTypes() {
+            const mainType = document.getElementById('schedule_type').value;
+            const subTypeSelect = document.getElementById('sub_type');
+            
+            subTypeSelect.innerHTML = '<option value="">Select service details...</option>';
+            
+            if (mainType && subTypesByMain[mainType]) {
+                subTypesByMain[mainType].forEach(subType => {
+                    const option = document.createElement('option');
+                    option.value = subType;
+                    option.textContent = subType;
+                    subTypeSelect.appendChild(option);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

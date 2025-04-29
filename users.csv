@@ -1,0 +1,4 @@
+name,password,Email,subscribed
+jimmytest,1234jimmyuser,jimmytest@gmail.com,False
+charoltest,1234charoluser,charoltest@gmail.com,True
+tommytest,1234tommyuser,tommytest@gmail.com,False

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rolsa Technologies:Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rolsa Technologies:Carbon Footprint Calculator</h1>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+
+                <div class="flash-messages">
+                    {{ messages[0] }}
+                </div>
+
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" class="calculator-form">
+            <div class="form-section">
+
+                <div class="section-title">Monthly Bills</div>
+                {% for emission_type in emission_types if 'Bill' in emission_type %}
+
+                <div class="form-group">
+                    <label for="{{ emission_type }}">{{ emission_type.replace('_', ' ') }}</label>
+                    <input type="number" id="{{ emission_type }}" name="{{ emission_type }}" 
+                           step="0.01" min="0" required>
+                    <div class="input-hint">Enter amount in Pounds (£)</div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">Yearly Travel</div>
+
+                {% for emission_type in emission_types if 'Flights' in emission_type or 'Mileage' in emission_type %}
+                <div class="form-group">
+
+                    <label for="{{ emission_type }}">{{ emission_type.replace('_', ' ') }}</label>
+                    <input type="number" id="{{ emission_type }}" name="{{ emission_type }}" 
+                           step="0.01" min="0" required>
+                    <div class="input-hint">
+
+                        {% if 'Mileage' in emission_type %}
+                            Enter car mileage for this year so far
+                        {% else %}
+                            Enter number of flights this year so far
+                        {% endif %}
+
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">Recycling Habits</div>
+
+                {% for emission_type in emission_types if 'recycle' in emission_type %}
+                <div class="form-group">
+
+                    <label for="{{ emission_type }}">{{ emission_type.replace('_', ' ') }}</label>
+                    <input type="number" id="{{ emission_type }}" name="{{ emission_type }}" 
+                           step="0.01" min="0" required>
+
+                    <div class="input-hint">Enter 1 if you do recycle, enter 0 if not</div>
+                </div>
+
+                {% endfor %}
+            </div>
+            
+            <button type="submit">Calculate Footprint</button>
+        </form>
+
+        {% if result %}
+        <div class="result-container" style="background-color: {{ color }}15;">
+
+            <div class="result-value" style="color: {{ color }}">
+                {{ total_footprint }} kg CO₂ emissions/year
+            </div>
+
+            <div class="result-category" style="color: {{ color }}">
+                {{ category }} Carbon Footprint
+            </div>
+
+            <div class="result-message">
+                {{ message }}
+            </div>
+
+        </div>
+        {% endif %}
+
+        <div class="nav-links">
+            <a href="{{ url_for('home_page') }}">Back to Homepage</a>
+        </div>
+
+    </div>
+</body>
+</html>

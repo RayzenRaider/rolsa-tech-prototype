@@ -1,0 +1,9 @@
+type_of_emission,multiplication_value,addition_value
+Electrical_Bill,105,0
+Gas_Bill,105,0
+Oil_Bill,113,0
+Total_car_Mileage,0.79,0
+Amount_of_Flights_shorter_than_4_hours,1100,0
+Amount_of_Flights_longer/equal_than/to_4_hours,4400,0
+Dont_recycle_Newspapers,1,166
+Dont_recycle_Aluminium_&_Tin,1,184

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rolsa Technologies:Guest Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rolsa Technologies:Guest Homepage</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            
+                <div class="flash-messages">
+                    {{ messages[0] }}
+                </div>
+
+            {% endif %}
+        {% endwith %}
+
+            <div style="text-align: center; margin: 30px 0;">
+                <div style="margin: 20px 0;">
+    
+                    <a href="{{ url_for('footprint_calculator') }}">
+                        <button>Carbon Footprint Calculator</button>
+                    </a>
+    
+                </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <div style="margin: 20px 0;">
+
+                <a href="{{ url_for('sign_in') }}">
+                    <button>Account Sign In</button>
+                </a>
+
+            </div>
+
+            <div>
+                <a href="{{ url_for('sign_up') }}">
+                    <button>Account Sign Up</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

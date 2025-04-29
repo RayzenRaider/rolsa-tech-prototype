@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rolsa Technologies:Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Sign Up</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+
+                <div class="flash-messages">
+                    {{ messages[0] }}
+                </div>
+
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="accept_tos" required>
+                    I accept the Terms of Service
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="subscribe_email">
+                    Subscribe to dashboard updates
+                </label>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="nav-links">
+            <a href="{{ url_for('sign_in') }}">Already have an account? Sign in</a>
+        </div>
+
+    </div>
+</body>
+</html>
